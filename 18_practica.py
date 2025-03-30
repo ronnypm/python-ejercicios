@@ -233,17 +233,96 @@
 # Encuentra la mayor diferencia entre la persona más alta y la más baja.
 
 
-alturas = [170, 165, 180, 175, 160, 185, 172]
+# alturas = [170, 165, 180, 175, 160, 185, 172]
 
-alt_min = alt_max = alturas[0]
+# alt_min = alt_max = alturas[0]
 
-for altura in alturas[1:]:
-    if altura < alt_min:
-        alt_min = altura
-    if altura > alt_max:
-        alt_max = altura
+# for altura in alturas[1:]:
+#     if altura < alt_min:
+#         alt_min = altura
+#     if altura > alt_max:
+#         alt_max = altura
 
 
-print(alt_min)
-print(alt_max)
-print(alt_max - alt_min)
+# print(alt_min)
+# print(alt_max)
+# print(alt_max - alt_min)
+
+
+# Listas (1) - 1
+# Escriba un programa que permita crear una lista de palabras. Para ello, el programa tiene que pedir un número y luego solicitar ese número de palabras para crear la lista. Por último, el programa tiene que escribir la lista.
+
+
+
+
+
+
+# for palabra in range(1,numero_palabra +1 ):
+#     palabras = input(f'Ingrese la palabra {palabra}: ')
+#     lista_palabra.append(palabras)
+
+# print(f'La lista creadad es {lista_palabra}')
+
+# try:
+#     while True:
+#         try:
+#             numero_palabra = int(input('Ingres el numero de plabras: '))
+#             if numero_palabra > 0:
+#                 break
+#             print('Imposible, ingrese un numero positivo')
+#         except ValueError:
+#             print('Error Ingrese un numero')
+
+#     lista_palabra = []
+
+#     for indice_palabra, _ in enumerate(range(numero_palabra),start=1):
+#         input_palabra = input(f'Ingrese la palabra {indice_palabra}: ')
+#         lista_palabra.append(input_palabra)
+
+#     print(f'La lista creada es: {lista_palabra}')
+
+# except  KeyboardInterrupt:
+#     print("\nPrograma interrumpido por el usuario.")
+
+
+
+
+# Escriba un programa que permita crear una lista de palabras y que, a continuación, pida una palabra y diga cuántas veces aparece esa palabra en la lista.
+
+
+
+try:
+    while True:
+        try:
+            numero_palabra = int(input('Ingrese el numero de plabras: '))
+            
+            if numero_palabra > 0:
+                break
+            print('Imposible ingrese un numero positvo')
+        except ValueError:
+            print('Error, solo se permiten numeros') 
+
+    lista_palabra = []
+
+    for palabra, _ in enumerate(range(numero_palabra),start=1):
+        palabras = input(f'Ingrese la palabra {palabra}: ')
+        lista_palabra.append(palabras)
+
+    print(f'Palabras creadas {lista_palabra}')
+
+    palabra_buscar = input("Digame la palabra a buscar: ").lower()
+    contador = 0
+    for palabra in lista_palabra:
+        if palabra == palabra_buscar:
+            contador += 1
+
+    if contador == 0:
+        print(f'La palabra {palabra_buscar} aparece {contador} veces')
+    elif contador == 1:
+        print(f'La palabra {palabra_buscar} aparece {contador} veces')
+    else:
+        print(f'La palabra {palabra_buscar} aparece {contador} veces')
+
+
+except KeyboardInterrupt:
+    print('\nPrograma interrumpido por el usuario.')

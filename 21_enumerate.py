@@ -7,11 +7,11 @@
 # Usarías enumerate() en un for para recorrer la lista y agregar un número a cada estudiante.
 
 
-lista_estudiantes = ["Ana", "Carlos", "Luis", "María"]
-lista_estudiantes.sort(key=len)
+# lista_estudiantes = ["Ana", "Carlos", "Luis", "María"]
+# lista_estudiantes.sort(key=len)
 
-for indice,nombre in enumerate(lista_estudiantes):
-    print(f'{indice + 1}. {len(nombre)}') 
+# for indice,nombre in enumerate(lista_estudiantes):
+#     print(f'{indice + 1}. {len(nombre)}') 
 
 
 
@@ -21,7 +21,7 @@ for indice,nombre in enumerate(lista_estudiantes):
 # Entrada:
 # 👉 [10, 15, 20, 25, 30]
 
+lista =[10, 15, 20, 25, 30]
 
-lista_numero = [10, 15, 20, 25, 30]
-
-for 
+for i, _ in enumerate(lista,start=1):
+    print(i , _)
