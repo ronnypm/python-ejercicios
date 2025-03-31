@@ -111,3 +111,5 @@ palabras = ["sol", "luna", "estrella", "sol", "nube", "luna", "sol", "mar", "nub
 # print(lista_palabra)
 
 
+
+

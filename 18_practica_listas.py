@@ -291,38 +291,211 @@
 
 
 
+# try:
+#     while True:
+#         try:
+#             numero_palabra = int(input('Ingrese el numero de plabras: '))
+            
+#             if numero_palabra > 0:
+#                 break
+#             print('Imposible ingrese un numero positvo')
+#         except ValueError:
+#             print('Error, solo se permiten numeros') 
+
+#     lista_palabra = []
+
+#     for palabra, _ in enumerate(range(numero_palabra),start=1):
+#         palabras = input(f'Ingrese la palabra {palabra}: ')
+#         lista_palabra.append(palabras)
+
+#     print(f'Palabras creadas {lista_palabra}')
+
+#     palabra_buscar = input("Digame la palabra a buscar: ").lower()
+#     contador = 0
+#     for palabra in lista_palabra:
+#         if palabra == palabra_buscar:
+#             contador += 1
+
+#     if contador == 0:
+#         print(f'La palabra {palabra_buscar} aparece {contador} veces')
+#     elif contador == 1:
+#         print(f'La palabra {palabra_buscar} aparece {contador} veces')
+#     else:
+#         print(f'La palabra {palabra_buscar} aparece {contador} veces')
+
+
+# except KeyboardInterrupt:
+#     print('\nPrograma interrumpido por el usuario.')
+
+
+# Listas (1) - 3
+# Escriba un programa que permita crear una lista de palabras y que, a continuación, pida dos palabras y sustituya la primera por la segunda en la lista.
+
+# try:
+#     while True:
+#         try:
+#             numero_palabra = int(input('Ingrese el numero de plabras: '))
+#             if numero_palabra > 0 :
+#                 break
+#             print('Ingrese un numero positivo.')
+#         except ZeroDivisionError:
+#             print('Ingrese un numero positivo.')
+#         except ValueError:
+#             print('Error solo se permiten numeros')
+
+
+#     lista_numero = []
+
+
+#     for numero in range(1,numero_palabra + 1):
+#         while True:
+#             palabra = input(f'Ingrese la palabra {numero}: ')
+#             if palabra.isalpha():
+#                 lista_numero.append(palabra)
+#                 break
+#             print('Error, solo se permiten letras')
+
+#     print('-' * 30)
+
+#     for indice, palabra in  enumerate(lista_numero,start=1):
+#         print(f'El nombre {indice} es {palabra}') 
+
+
+#     palabra_lista = input('Ingrese la palabra a sustituir: ') 
+#     palabra_sustituir = input('Por la palabra: ')
+
+#     for palabra in range(len(lista_numero)):
+#         if lista_numero[palabra] == palabra_lista:
+#             lista_numero[palabra] = palabra_sustituir
+
+#     print(lista_numero)
+
+
+# except KeyboardInterrupt:
+#     print('\nPrograma interrumpido por el usuario.')
+
+
+
+# Listas (1) - 4
+# Escriba un programa que permita crear una lista de palabras y que, a continuación, pida una palabra y elimine esa palabra de la lista.
+
+# try:
+#     while True:
+#         try:
+#             numero_palabra = int(input('Dígame cuántas palabras tiene la lista: '))
+#             if numero_palabra > 0 :
+#                 break
+#             print('Ingrese un numero positivo.')
+#         except ValueError:
+#             print('Error solo se permiten numeros.')
+
+        
+#     lista_palabras = []
+
+
+#     for palabra in range(1,numero_palabra + 1):
+#         while True:
+#             palabras = input(f'Dígame la palabra {palabra}: ')
+#             if palabras.isalpha():
+#                 lista_palabras.append(palabras)
+#                 break
+#             print('Solo se permiten letras.')
+
+    
+#     print('-' * 30)
+
+
+#     for indice,valor in enumerate(lista_palabras,start=1):
+#         print(f'{indice}.el nombre creado es {valor}. ')
+
+
+#     palabra_eliminar = input('Palabra a eliminar: ')
+
+
+#     while palabra_eliminar in lista_palabras:
+#         lista_palabras.remove(palabra_eliminar)
+    
+
+#     # lista_palabras = [palabra for palabra in lista_palabras if palabra != palabra_eliminar]
+
+#     print('-' * 30)
+
+#     for indice,valor in enumerate(lista_palabras,start=1):
+#         print(f'{indice}.lista actualizada es {valor}. ')
+
+
+# except KeyboardInterrupt:
+#     print('\nProgama interrumpido por el usuario.')
+
+
+# Listas (1) - 5
+# Escriba un programa que permita crear dos listas de palabras y que, a continuación, elimine de la primera lista los nombres de la segunda lista.
+
 try:
+    
     while True:
         try:
-            numero_palabra = int(input('Ingrese el numero de plabras: '))
-            
+            numero_palabra = int(input('Dígame cuántas palabras tiene la lista: '))
             if numero_palabra > 0:
-                break
-            print('Imposible ingrese un numero positvo')
+                    break
+            print('Error, solo se permiten numeros positivos.')
         except ValueError:
-            print('Error, solo se permiten numeros') 
+            print('Error, no se permiten letras, solo numeros.')
+
 
     lista_palabra = []
 
-    for palabra, _ in enumerate(range(numero_palabra),start=1):
-        palabras = input(f'Ingrese la palabra {palabra}: ')
-        lista_palabra.append(palabras)
+    for palabra in range(1,numero_palabra + 1):
+         while True:
+              nombre = input(f'Dígame la palabra {palabra}: ')
+              if nombre.isalpha():
+                    lista_palabra.append(nombre)
+                    break
+              print('No se permiten numeros.')  
 
-    print(f'Palabras creadas {lista_palabra}')
 
-    palabra_buscar = input("Digame la palabra a buscar: ").lower()
-    contador = 0
-    for palabra in lista_palabra:
-        if palabra == palabra_buscar:
-            contador += 1
+    print(f'La lista creada es {lista_palabra}')
 
-    if contador == 0:
-        print(f'La palabra {palabra_buscar} aparece {contador} veces')
-    elif contador == 1:
-        print(f'La palabra {palabra_buscar} aparece {contador} veces')
-    else:
-        print(f'La palabra {palabra_buscar} aparece {contador} veces')
+    while True:
+        try:
+            numero_palabra = int(input('Dígame cuántas palabras tiene la lista de palabras a eliminar: '))
+            if numero_palabra > 0:
+                    break
+            print('Error, solo se permiten numeros positivos.')
+        except ValueError:
+            print('Error, no se permiten letras, solo numeros.')
+
+    lista_eliminar = []
+
+    for palabra in range(1,numero_palabra + 1):
+         while True:
+              nombre = input(f'Dígame la palabra {palabra}: ')
+              if nombre.isalpha():
+                    lista_eliminar.append(nombre)
+                    break
+              print('No se permiten numeros.')
+
+
+    for i in lista_eliminar:                
+        for palabra in range(len(lista_palabra)-1,-1,-1):
+            if lista_palabra[palabra] == i:
+                    del lista_palabra[palabra]
+
+
+    # lista_palabra = [palabra for palabra in lista_palabra if palabra not in lista_eliminar]
+
+    # for palabra_eliminar in lista_eliminar:
+    #   while palabra_eliminar in lista_palabra:
+    #     lista_palabra.remove(palabra_eliminar)
+
+
+    print(lista_palabra)
+         
+         
 
 
 except KeyboardInterrupt:
-    print('\nPrograma interrumpido por el usuario.')
+    print('Programa interrumpido por el usuario.')
+
+
+#Ejercicios6

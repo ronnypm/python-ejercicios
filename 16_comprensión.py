@@ -193,3 +193,11 @@
 # thislist = ["banana", "Orange", "Kiwi", "cherry"]
 # thislist.sort(key=str.lower)
 # print(thislist)
+
+
+
+
+# Puedes usar un for si necesitas cambiar varios valores dentro de la lista:
+# mi_lista = [10, 20, 30, 20, 40]  
+# mi_lista = [99 if num == 20 else num for num in mi_lista]  # Cambia todos los 20 por 99  
+# print(mi_lista)  
