@@ -182,3 +182,4 @@
 #             print(f'Error: {e}')
 # except KeyboardInterrupt:
 #     print('\n❌ Programa interrumpido por el usuario')
+
