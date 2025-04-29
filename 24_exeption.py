@@ -156,30 +156,30 @@
 
 # Usar raise para generar un error si el correo es inválido.
 
-# def validar_correo(correo):
-#     # Verificar que el correo contenga '@' y que termine con un dominio válido
-#     if '@' not in correo or not correo.endswith(('.com', '.net', '.org')):
-#         raise ValueError('❌ Correo no válido. Debe contener "@" y terminar en ".com", ".net" o ".org"')
-#     return '✅ Correo válido'
+def validar_correo(correo):
+    # Verificar que el correo contenga '@' y que termine con un dominio válido
+    if '@' not in correo or not correo.endswith(('.com', '.net', '.org')):
+        raise ValueError('❌ Correo no válido. Debe contener "@" y terminar en ".com", ".net" o ".org"')
+    return '✅ Correo válido'
 
-# # Probando
-# try:
-#     while True:
-#         try:
-#             email = input('Ingrese su correo: ')
+# Probando
+try:
+    while True:
+        try:
+            email = input('Ingrese su correo: ')
         
-#             # Verificar que el correo no sea solo números
-#             if email.isdigit():
-#                 raise ValueError("❌ El correo no puede ser solo números.")
+            # Verificar que el correo no sea solo números
+            if email.isdigit():
+                raise ValueError("❌ El correo no puede ser solo números.")
         
-#             # Verificar que el correo no sea solo letras
-#             if email.isalpha():
-#                 raise ValueError("❌ El correo no puede ser solo letras.")
+            # Verificar que el correo no sea solo letras
+            if email.isalpha():
+                raise ValueError("❌ El correo no puede ser solo letras.")
         
-#             print(validar_correo(email))
-#             break
-#         except ValueError as e:
-#             print(f'Error: {e}')
-# except KeyboardInterrupt:
-#     print('\n❌ Programa interrumpido por el usuario')
+            print(validar_correo(email))
+            break
+        except ValueError as e:
+            print(f'Error: {e}')
+except KeyboardInterrupt:
+    print('\n❌ Programa interrumpido por el usuario')
 
