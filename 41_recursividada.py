@@ -50,3 +50,17 @@ numero = int(input('Ingrese un numero: '))
 fibo = fibonacci(numero)
 
 print(fibo)
+
+
+
+
+
+def hanoi(n, origen, auxiliar, destino):
+    if n == 1:
+        print(f"Mueve disco de {origen} a {destino}")
+    else:
+        hanoi(n-1, origen, destino, auxiliar)
+        print(f"Mueve disco de {origen} a {destino}")
+        hanoi(n-1, auxiliar, origen, destino)
+
+hanoi(3, 'A', 'B', 'C')

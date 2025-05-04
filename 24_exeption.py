@@ -156,30 +156,127 @@
 
 # Usar raise para generar un error si el correo es inválido.
 
-def validar_correo(correo):
-    # Verificar que el correo contenga '@' y que termine con un dominio válido
-    if '@' not in correo or not correo.endswith(('.com', '.net', '.org')):
-        raise ValueError('❌ Correo no válido. Debe contener "@" y terminar en ".com", ".net" o ".org"')
-    return '✅ Correo válido'
+# def validar_correo(correo):
+#     # Verificar que el correo contenga '@' y que termine con un dominio válido
+#     if '@' not in correo or not correo.endswith(('.com', '.net', '.org')):
+#         raise ValueError('❌ Correo no válido. Debe contener "@" y terminar en ".com", ".net" o ".org"')
+#     return '✅ Correo válido'
 
-# Probando
-try:
+# # Probando
+# try:
+#     while True:
+#         try:
+#             email = input('Ingrese su correo: ')
+        
+#             # Verificar que el correo no sea solo números
+#             if email.isdigit():
+#                 raise ValueError("❌ El correo no puede ser solo números.")
+        
+#             # Verificar que el correo no sea solo letras
+#             if email.isalpha():
+#                 raise ValueError("❌ El correo no puede ser solo letras.")
+        
+#             print(validar_correo(email))
+#             break
+#         except ValueError as e:
+#             print(f'Error: {e}')
+# except KeyboardInterrupt:
+#     print('\n❌ Programa interrumpido por el usuario')
+
+# -------------------------------------------------------
+
+# def pedido():
+
+#     while True:
+#         numero =  input('ingrese un numero: ')
+   
+#         if not numero:
+#                 print('No ingreso un dato')
+#                 continue
+        
+#         try:
+#             numero_int = str(numero)
+#             print(f'Ingreso el numero {numero_int}')
+#             break
+#         except ValueError:
+#             print('Entradad invalida. Debe ingresar un numero')
+
+# pedido()
+
+# class EntradaVaciaError(Exception):
+#     pass
+
+# def pedido():
+#     while True:
+#         try:
+#             numero = input('Ingrese un numero: ')
+
+#             if not numero:
+#                 raise EntradaVaciaError('No ingreso un dato')
+            
+#             numero_int = int(numero)
+#             print(f'Numero ingresado {numero_int} ')
+#             break
+#         except EntradaVaciaError as e:
+#             print(f'Error: {e}')
+#         except ValueError:
+#             print('Entrada invalida. Debe ingresar un numero entero')
+# pedido()
+
+
+
+
+class NombreEdadVacioError(Exception):
+    pass
+
+
+
+class NumeroEnNombreError(Exception):
+    pass
+
+
+
+class EdadInvalidadError(Exception):
+    pass
+
+
+
+def  datos_usuario():
+
+    while True:
+
+        try:
+            nombre = input('Ingrese su nombre: ')
+
+            if not nombre:
+                raise NombreEdadVacioError('No ingreso un dato.')
+            
+            if not nombre.isalpha():
+                raise NumeroEnNombreError('No se permiten numeros.')
+            
+            break
+        except (NombreEdadVacioError,NumeroEnNombreError) as e:
+            print(f'Error: {e}')
+
     while True:
         try:
-            email = input('Ingrese su correo: ')
-        
-            # Verificar que el correo no sea solo números
-            if email.isdigit():
-                raise ValueError("❌ El correo no puede ser solo números.")
-        
-            # Verificar que el correo no sea solo letras
-            if email.isalpha():
-                raise ValueError("❌ El correo no puede ser solo letras.")
-        
-            print(validar_correo(email))
-            break
-        except ValueError as e:
-            print(f'Error: {e}')
-except KeyboardInterrupt:
-    print('\n❌ Programa interrumpido por el usuario')
 
+            edad = input('Ingrese su edad: ')
+
+            if not edad:
+                raise NombreEdadVacioError('No ingreso un dato')
+            
+            edad_int = int(edad)
+            
+            if   edad_int <1 or edad_int > 90:
+                raise EdadInvalidadError('Edad invalida')
+            break
+        except NombreEdadVacioError as e:
+            print(f'Error: {e}')
+        except EdadInvalidadError as e:
+            print(f'Error: {e}')
+        except ValueError:
+            print('No ingreso un numero.')
+
+    print(f'\n✅ Nombre: {nombre}\n✅ Edad: {edad_int}')
+datos_usuario()
