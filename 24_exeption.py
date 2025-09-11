@@ -279,4 +279,59 @@ def  datos_usuario():
             print('No ingreso un numero.')
 
     print(f'\n✅ Nombre: {nombre}\n✅ Edad: {edad_int}')
+
 datos_usuario()
+
+
+
+
+# # 📌 Excepciones personalizadas
+# class EntradaVaciaError(Exception):
+#     pass
+
+# class DatoInvalidoError(Exception):
+#     pass
+
+# class EdadFueraDeRangoError(Exception):
+#     pass
+
+
+# # 📌 Función para pedir nombre
+# def pedir_nombre():
+#     nombre = input("Ingrese su nombre: ").strip()
+#     if not nombre:
+#         raise EntradaVaciaError("El nombre no puede estar vacío.")
+#     if not nombre.isalpha():
+#         raise DatoInvalidoError("El nombre solo debe contener letras.")
+#     return nombre
+
+
+# # 📌 Función para pedir edad
+# def pedir_edad():
+#     edad = input("Ingrese su edad: ").strip()
+#     if not edad:
+#         raise EntradaVaciaError("La edad no puede estar vacía.")
+#     try:
+#         edad_int = int(edad)
+#     except ValueError:
+#         raise DatoInvalidoError("La edad debe ser un número.")
+    
+#     if edad_int < 1 or edad_int > 120:
+#         raise EdadFueraDeRangoError("La edad debe estar entre 1 y 120 años.")
+    
+#     return edad_int
+
+
+# # 📌 Función principal del programa
+# def programa_principal():
+#     try:
+#         nombre = pedir_nombre()
+#         edad = pedir_edad()
+#         print(f"\n✅ Bienvenido {nombre}, tenés {edad} años.")
+#     except (EntradaVaciaError, DatoInvalidoError, EdadFueraDeRangoError) as e:
+#         print(f"❌ Error: {e}")
+
+
+# # 📌 Ejecutar
+# if __name__ == "__main__":
+#     programa_principal()
