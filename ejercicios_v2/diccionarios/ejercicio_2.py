@@ -10,9 +10,6 @@ for date in list_users:
     date_user = input(f"Ingrese {date}: ")
     dict_users[date] = date_user
 
-for value in dict_users:
-    print(value[date])
-
 
 # for key, value in dict_users.items():
 #     print(f"{key} {value}")
