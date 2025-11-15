@@ -9,7 +9,11 @@ for index, curso in enumerate(lista_cursos):
     notas = input(f"{1}. Ingresa la nota de {curso}: ")
     lista_notas.append(notas)
 
-# for nota in range(len(lista_cursos)):
-#     print(lista_cursos[nota], lista_notas[nota])
+for nota in range(len(lista_cursos)):
+    print(lista_cursos[nota], lista_notas[nota])
 
-lista_notas = [lista_cursos[nota], lista_notas[nota] for nota in range(len(lista_cursos)) nota]
+# 
+class Cursos:
+    def __init__(self,lista_cursos):
+        self.lista_cursos = lista_cursos
+        
