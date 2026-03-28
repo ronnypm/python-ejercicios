@@ -13,7 +13,3 @@ for nota in range(len(lista_cursos)):
     print(lista_cursos[nota], lista_notas[nota])
 
 # 
-class Cursos:
-    def __init__(self,lista_cursos):
-        self.lista_cursos = lista_cursos
-        

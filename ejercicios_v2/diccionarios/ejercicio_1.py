@@ -8,4 +8,7 @@ divisas = {'Euro': '€', 'Dollar': '$', 'Yen': '¥'}
 
 pregunta = input("ingrese su divisa: ")
 for i in divisas.get(pregunta.title()):
+    if pregunta.title() == i:
+        print("Divisa no encontrada.")
+        break
     print(i)
